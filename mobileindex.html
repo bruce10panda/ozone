@@ -136,6 +136,26 @@
         width: 100%;
       }
     }
+
+    /* Style for the Discord button */
+    .discord-button {
+      position: fixed;
+      bottom: 20px; /* Adjust the distance from the bottom as needed */
+      right: 20px; /* Adjust the distance from the right as needed */
+      background-color: #7289DA; /* Discord's brand color */
+      color: #fff;
+      padding: 5px; /* Adjust the padding as needed */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 9999; /* Ensure it's above other elements */
+      text-decoration: none; /* Remove underline for the link */
+    }
+
+    .discord-button img {
+      width: 60px; /* Adjust the icon size as needed */
+    }
+
   </style>
   <title class="glowing-title">ozoneUX</title>
 </head>
@@ -172,6 +192,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Discord Button -->
+  <a href="https://discord.com/invite/tmegAqUZ7V" target="_blank" class="discord-button">
+    <img src="https://imgs.search.brave.com/f5gWxhGM5eU0XzlJz4TOVwmm6r0OTzN7w29OQRVxfw8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9kaXNjb3Jk/LWljb24tNTEyeDUx/Mi1mcmJzMTRyci5w/bmc" alt="Discord Icon">
+  </a>
 
   <script>
     let scrolling = false;
