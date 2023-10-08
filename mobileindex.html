@@ -9,7 +9,6 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      /* Remove overflow: hidden; */
       background-color: #0c1821;
     }
 
@@ -23,7 +22,7 @@
     }
 
     .logo {
-      width: 1500px; /* Adjust the width as needed */
+      max-width: 100%; /* Adjust the width as needed */
     }
 
     .fade-in-logo {
@@ -36,7 +35,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin: 0 20px; /* Add margin to the left and right sides */
+      margin: 0 20px;
     }
 
     .text {
@@ -97,69 +96,75 @@
 
     .columns {
       display: flex;
-      justify-content: space-between;
-      width: 90%;
+      flex-direction: column; /* Stack columns on mobile */
+      align-items: center;
       margin-top: 2rem;
     }
 
-    .content-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row; /* Arrange the columns side by side */
-    }
-
     .column {
-      flex: 1;
       border-radius: 10px;
       display: flex;
-      justify-content: center;
+      flex-direction: column; /* Stack content on mobile */
       align-items: center;
       overflow: hidden;
+      margin-bottom: 1rem; /* Add margin between columns */
     }
 
     .column img {
-      max-width: 40%; /* Adjust the image size as needed */
-      max-height: auto; /* Adjust the image size as needed */
+      max-width: 100%; /* Adjust the image size as needed */
+      max-height: auto;
       border-radius: 10px;
     }
 
     .desc {
-      flex: 1;
-      background-color: #1b2a41; /* Background color for the description box */
-      padding: 20px; /* Adjust padding as needed */
+      background-color: #1b2a41;
+      padding: 20px;
       border-radius: 10px;
-      text-align: left; /* Align the text to the left */
+      text-align: left;
+      margin-top: 1rem; /* Add margin between sections */
     }
 
     .desc img {
-      max-width: 50%; /* Adjust the image size as needed */
-      max-height: auto; /* Adjust the image size as needed */
+      max-width: 100%; /* Adjust the image size as needed */
+      max-height: auto;
       border-radius: 10px;
-    }
-
-    .column-text {
-      flex: 1;
-      margin: 0 20px; /* Add margin to the left and right sides of the text */
-      text-align: left; /* Align the text to the left */
     }
 
     .discord-button {
       position: fixed;
-      bottom: 20px; /* Adjust the distance from the bottom as needed */
-      right: 20px; /* Adjust the distance from the right as needed */
-      background-color: #5865F2; /* Discord's brand color */
+      bottom: 20px;
+      right: 20px;
+      background-color: #5865F2;
       color: #fff;
-      padding: 5px 10px; /* Adjust the padding as needed */
+      padding: 5px 10px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      z-index: 9999; /* Ensure it's above other elements */
-      text-decoration: none; /* Remove underline for 1the link */
+      z-index: 9999;
+      text-decoration: none;
     }
 
     .discord-icon {
-      width: 60px; /* Adjust the icon size as needed */
+      width: 60px;
+    }
+
+    @media screen and (max-width: 768px) {
+      /* Adjust styles for screens with a maximum width of 768px (e.g., tablets and mobiles) */
+      .logo {
+        max-width: 80%; /* Reduce logo width for smaller screens */
+      }
+
+      .bigtext {
+        font-size: 2rem; /* Reduce the font size for the bigtext on smaller screens */
+      }
+
+      .columns {
+        flex-direction: row; /* Revert to row layout for columns on smaller screens */
+      }
+
+      .column {
+        margin: 0 1rem; /* Add margin to columns on smaller screens */
+      }
     }
   </style>
   <title class="glowing-title">ozoneUX</title>
@@ -190,9 +195,6 @@
         <div class="desc">
           <p class="bigtext">what is ozone?</p>
           <p class="text">Are you ready to take your Android experience to the next level? Say hello to Ozone, a cutting-edge custom Android ROM that will redefine your smartphone's potential. Ozone is about giving you the freedom to tailor your device to your unique preferences, offering an array of features and optimizations that cater to both power users and those seeking a sleek, intuitive interface.</p>
-        </div>
-        <div class="column">
-          <img src="assets/screenshot1.png" alt="Image 1">
         </div>
       </div>
     </div>
