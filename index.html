@@ -17,7 +17,7 @@
       padding: 0;
       font-family: Arial, sans-serif;
       overflow: hidden;
-      background-color: #111;
+      background-color: #0c1821;
     }
 
     .section {
@@ -44,10 +44,19 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      margin: 0 20px; /* Add margin to the left and right sides */
     }
 
     .text {
       font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      opacity: 0;
+      animation: fade-in 2s ease forwards;
+    }
+
+    .bigtext {
+      font-size: 3rem;
       font-weight: bold;
       margin: 1rem 0;
       opacity: 0;
@@ -101,48 +110,65 @@
       margin-top: 2rem;
     }
 
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; /* Arrange the columns side by side */
+    }
+
     .column {
       flex: 1;
-      background-color: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
-      padding: 20px;
-      margin: 1rem;
-      color: white;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
-    .column p {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      margin-top: 0.5rem;
+    .column img {
+      max-width: 40%; /* Adjust the image size as needed */
+      max-height: auto; /* Adjust the image size as needed */
+      border-radius: 10px;
     }
 
-    .column-description {
-      font-size: 1.2rem;
-      text-align: center; /* Align description to the center */
+    .desc {
+      flex: 1;
+      background-color: #1b2a41; /* Background color for the description box */
+      padding: 20px; /* Adjust padding as needed */
+      border-radius: 10px;
+      text-align: left; /* Align the text to the left */
     }
 
-       /* Style for the button */
-       .discord-button {
-            position: fixed;
-            bottom: 20px; /* Adjust the distance from the bottom as needed */
-            right: 20px; /* Adjust the distance from the right as needed */
-            background-color: #7289DA; /* Discord's brand color */
-            color: #fff;
-            padding: 5px 10px; /* Adjust the padding as needed */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 9999; /* Ensure it's above other elements */
-            text-decoration: none; /* Remove underline for the link */
-        }
+    .desc img {
+      max-width: 50%; /* Adjust the image size as needed */
+      max-height: auto; /* Adjust the image size as needed */
+      border-radius: 10px;
+    }
 
-        /* Style for the Discord icon */
-        .discord-icon {
-            width: 60px; /* Adjust the icon size as needed */
-        }
+    .column-text {
+      flex: 1;
+      margin: 0 20px; /* Add margin to the left and right sides of the text */
+      text-align: left; /* Align the text to the left */
+    }
 
+    .discord-button {
+      position: fixed;
+      bottom: 20px; /* Adjust the distance from the bottom as needed */
+      right: 20px; /* Adjust the distance from the right as needed */
+      background-color: #5865F2; /* Discord's brand color */
+      color: #fff;
+      padding: 5px 10px; /* Adjust the padding as needed */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 9999; /* Ensure it's above other elements */
+      text-decoration: none; /* Remove underline for the link */
+    }
+
+    .discord-icon {
+      width: 60px; /* Adjust the icon size as needed */
+    }
   </style>
   <title class="glowing-title">ozoneUX</title>
 </head>
@@ -155,31 +181,43 @@
   </div>
 
   <a href="https://discord.com/invite/tmegAqUZ7V" target="_blank" class="discord-button">
-    <img src="https://imgs.search.brave.com/f5gWxhGM5eU0XzlJz4TOVwmm6r0OTzN7w29OQRVxfw8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9kaXNjb3Jk/LWljb24tNTEyeDUx/Mi1mcmJzMTRyci5w/bmc" alt="Discord Icon" class="discord-icon">
+    <img src="https://images-eds-ssl.xboxlive.com/image?url=Q_rwcVSTCIytJ0KOzcjWTYl.n38D8jlKWXJx7NRJmQKBAEDCgtTAQ0JS02UoaiwRCHTTX1RAopljdoYpOaNfVf5nBNvbwGfyR5n4DAs0DsOwxSO9puiT_GgKqinHT8HsW8VYeiiuU1IG3jY69EhnsQ--&format=source&w=207" alt="Discord logo" class="discord-icon">
   </a>
 
   <div class="section" id="about">
     <div class="container text-container">
-      <p class="text">wanna see what we do?</p>
+      <p class="text">Aim for Ozone</p>
       <a href="#key-points" class="button">Learn More</a>
     </div>
   </div>
 
   <div class="section" id="key-points">
     <div class="container text-container">
-      <p class="text">what we care about</p>
+      <br>
+      <div class="content-wrapper">
+        <div class="desc">
+          <p class="bigtext">what is ozone?</p>
+          <p class="text">Are you ready to take your Android experience to the next level? Say hello to Ozone, a cutting-edge custom Android ROM that will redefine your smartphone's potential. Ozone is about giving you the freedom to tailor your device to your unique preferences, offering an array of features and optimizations that cater to both power users and those seeking a sleek, intuitive interface.</p>
+        </div>
+        <div class="column">
+          <img src="assets/screenshot1.png" alt="Image 1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="key-points">
+    <div class="container text-container">
+      <p class="bigtext">how does ozone look?</p>
       <div class="columns">
         <div class="column">
-          <p>Fast</p>
-          <h1 class="column-description">Our OS is designed for speed and efficiency. It ensures a snappy user experience.</h1>
+          <img src="assets/screenshot1.png" alt="Image 1">
         </div>
         <div class="column">
-          <p>Clean</p>
-          <h1 class="column-description">We prioritize a clean and intuitive user interface. Enjoy a beautiful experience.</h1>
+          <img src="assets/screenshot2.png" alt="Image 2">
         </div>
         <div class="column">
-          <p>Secure</p>
-          <h1 class="column-description">Your security and privacy are our top concerns. Our OS is built with robust security measures.</h1>
+          <img src="assets/screenshot3.png" alt="Image 3">
         </div>
       </div>
     </div>
