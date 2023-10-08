@@ -1,216 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="assets/favicon.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0c1821;
-            color: white;
-        }
+  <script>
+    // JavaScript code to detect if the user is on a mobile device
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      // Redirect to the mobile index page
+      window.location.href = "mobileindex.html";
+    }
+  </script>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background-color: #0c1821;
+    }
 
-        .section {
-            padding: 20px;
-        }
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
 
-        .logo {
-            width: 100%; /* Adjust the width as needed */
-        }
+    .logo {
+      width: 1500px; /* Adjust the width as needed */
+    }
 
-        .fade-in-logo {
-            opacity: 0;
-            animation: fade-in 2s ease forwards;
-        }
+    .fade-in-logo {
+      opacity: 0;
+      animation: fade-in 2s ease forwards;
+    }
 
-        .text-container {
-            text-align: center;
-            margin: 0 20px; /* Add margin to the left and right sides */
-        }
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 0 20px; /* Add margin to the left and right sides */
+    }
 
-        .text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
+    .text {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      opacity: 0;
+      animation: fade-in 2s ease forwards;
+    }
 
-        .bigtext {
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
+    .bigtext {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      opacity: 0;
+      animation: fade-in 2s ease forwards;
+    }
 
-        .button {
-            display: inline-block;
-            background: linear-gradient(45deg, #00a2ff, #006eff);
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 10px 20px;
-            margin-top: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s;
-            border-radius: 5px;
-        }
+    .button {
+      display: inline-block;
+      background: linear-gradient(45deg, #00a2ff, #006eff);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin-top: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
 
-        .button:hover {
-            transform: scale(1.1);
-        }
+    .button:hover {
+      transform: scale(1.1);
+    }
 
-        @keyframes fade-in {
-            to {
-                opacity: 1;
-            }
-        }
+    @keyframes fade-in {
+      to {
+        opacity: 1;
+      }
+    }
 
-        @keyframes title-glow {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-            }
-            100% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            }
-        }
+    @keyframes title-glow {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+      }
+      100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
 
-        .glowing-title {
-            animation: title-glow 2s infinite;
-        }
+    .glowing-title {
+      animation: title-glow 2s infinite;
+    }
 
-        .columns {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .columns {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin-top: 2rem;
+    }
 
-        .column {
-            flex: 0 0 100%;
-            padding: 10px;
-            text-align: center;
-        }
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; /* Arrange the columns side by side */
+    }
 
-        .column img {
-            max-width: 100%; /* Adjust the image size as needed */
-            max-height: auto;
-            border-radius: 10px;
-        }
+    .column {
+      flex: 1;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-        .desc img {
-            max-width: 100%; /* Adjust the image size as needed */
-            max-height: auto;
-            border-radius: 10px;
-        }
+    .column img {
+      max-width: 40%; /* Adjust the image size as needed */
+      max-height: auto; /* Adjust the image size as needed */
+      border-radius: 10px;
+    }
 
-        .column-text {
-            margin: 0 20px;
-            text-align: left;
-        }
+    .desc {
+      flex: 1;
+      background-color: #1b2a41; /* Background color for the description box */
+      padding: 20px; /* Adjust padding as needed */
+      border-radius: 10px;
+      text-align: left; /* Align the text to the left */
+    }
 
-        .discord-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #5865F2;
-            color: #fff;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 9999;
-            text-decoration: none;
-        }
+    .desc img {
+      max-width: 50%; /* Adjust the image size as needed */
+      max-height: auto; /* Adjust the image size as needed */
+      border-radius: 10px;
+    }
 
-        .discord-icon {
-            width: 60px;
-        }
+    .column-text {
+      flex: 1;
+      margin: 0 20px; /* Add margin to the left and right sides of the text */
+      text-align: left; /* Align the text to the left */
+    }
 
-        @media screen and (min-width: 768px) {
-            /* Add your tablet/desktop styles here */
-            body {
-                background-color: #03142f;
-            }
-        }
-    </style>
-    <title class="glowing-title">ozoneUX</title>
+    .discord-button {
+      position: fixed;
+      bottom: 20px; /* Adjust the distance from the bottom as needed */
+      right: 20px; /* Adjust the distance from the right as needed */
+      background-color: #5865F2; /* Discord's brand color */
+      color: #fff;
+      padding: 5px 10px; /* Adjust the padding as needed */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 9999; /* Ensure it's above other elements */
+      text-decoration: none; /* Remove underline for the link */
+    }
+
+    .discord-icon {
+      width: 60px; /* Adjust the icon size as needed */
+    }
+  </style>
+  <title class="glowing-title">ozoneUX</title>
 </head>
 <body>
-<div class="section" id="home">
+  <div class="section" id="home">
     <div class="container">
-        <!-- Replace the h1 with the logo img and add the fade-in-logo class -->
-        <img src="assets/ozonemain.png" alt="Ozone Logo" class="logo fade-in-logo">
+      <!-- Replace the h1 with the logo img and add the fade-in-logo class -->
+      <img src="assets/ozonemain.png" alt="Ozone Logo" class="logo fade-in-logo">
     </div>
-</div>
+  </div>
 
-<a href="https://discord.com/invite/tmegAqUZ7V" target="_blank" class="discord-button">
-    <img src="https://images-eds-ssl.xboxlive.com/image?url=Q_rwcVSTCIytJ0KOzcjWTYl.n38D8jlKWXJx7NRJmQKBAEDCgtTAQ0JS02UoaiwRCHTTX1RAopljdoYpOaNfVf5nBNvbwGfyR5n4DAs0DsOwxSO9puiT_GgKqinHT8HsW8VYeiiuU1IG3jY69EhnsQ--&format=source&w=207"
-         alt="Discord logo" class="discord-icon">
-</a>
+  <a href="https://discord.com/invite/tmegAqUZ7V" target="_blank" class="discord-button">
+    <img src="https://images-eds-ssl.xboxlive.com/image?url=Q_rwcVSTCIytJ0KOzcjWTYl.n38D8jlKWXJx7NRJmQKBAEDCgtTAQ0JS02UoaiwRCHTTX1RAopljdoYpOaNfVf5nBNvbwGfyR5n4DAs0DsOwxSO9puiT_GgKqinHT8HsW8VYeiiuU1IG3jY69EhnsQ--&format=source&w=207" alt="Discord logo" class="discord-icon">
+  </a>
 
-<div class="section" id="about">
+  <div class="section" id="about">
     <div class="container text-container">
-        <p class="text">Aim for Ozone</p>
-        <a href="#key-points" class="button">Learn More</a>
+      <p class="text">Aim for Ozone</p>
+      <a href="#key-points" class="button">Learn More</a>
     </div>
-</div>
+  </div>
 
-<div class="section" id="key-points">
+  <div class="section" id="key-points">
     <div class="container text-container">
-        <br>
-        <div class="content-wrapper">
-            <div class="desc">
-                <p class="bigtext">what is ozone?</p>
-                <p class="text">Are you ready to take your Android experience to the next level? Say hello to Ozone, a cutting-edge custom Android ROM that will redefine your smartphone's potential. Ozone is about giving you the freedom to tailor your device to your unique preferences, offering an array of features and optimizations that cater to both power users and those seeking a sleek, intuitive interface.</p>
-            </div>
-            <div class="column">
-                <img src="assets/screenshot1.png" alt="Image 1">
-            </div>
+      <br>
+      <div class="content-wrapper">
+        <div class="desc">
+          <p class="bigtext">what is ozone?</p>
+          <p class="text">Are you ready to take your Android experience to the next level? Say hello to Ozone, a cutting-edge custom Android ROM that will redefine your smartphone's potential. Ozone is about giving you the freedom to tailor your device to your unique preferences, offering an array of features and optimizations that cater to both power users and those seeking a sleek, intuitive interface.</p>
         </div>
-    </div>
-</div>
-
-<div class="section" id="key-points">
-    <div class="container text-container">
-        <p class="bigtext">how does ozone look?</p>
-        <div class="columns">
-            <div class="column">
-                <img src="assets/screenshot1.png" alt="Image 1">
-            </div>
-            <div class="column">
-                <img src="assets/screenshot2.png" alt="Image 2">
-            </div>
-            <div class="column">
-                <img src="assets/screenshot3.png" alt="Image 3">
-            </div>
+        <div class="column">
+          <img src="assets/screenshot1.png" alt="Image 1">
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<script>
-    let scrolling = false;
-    const sections = document.querySelectorAll('.section');
-    let currentSection = 0;
-
-    window.addEventListener('wheel', (e) => {
-        if (!scrolling) {
-            scrolling = true;
-            if (e.deltaY > 0 && currentSection < sections.length - 1) {
-                currentSection++;
-            } else if (e.deltaY < 0 && currentSection > 0) {
-                currentSection--;
-            }
-            sections[currentSection].scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => {
-                scrolling = false;
-            }, 800);
-        }
-    });
-</script>
+  <div class="section" id="key-points">
+    <div class="container text-container">
+      <p class="bigtext">how does ozone look?</p>
+      <div class="columns">
+        <div class="column">
+          <img src="assets/screenshot1.png" alt="Image 1">
+        </div>
+        <div class="column">
+          <img src="assets/screenshot2.png" alt="Image 2">
+        </div>
+        <div class="column">
+          <img src="assets/screenshot3.png" alt="Image 3">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
